@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # resources :words
+
   resources :difficulties, :only => [:index, :show] do 
     resources :words, :only =>[:index, :show]
   end

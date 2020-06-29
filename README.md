@@ -16,11 +16,11 @@ Todos:
 Check Checklist on project requirements page
 
 Backend: 
-- Models: difficulties, score, words(needs a shuffle method)
-- Associations
+[X]Models: difficulties, score, words
+[X]Associations
 - logic for models
-- CORS
-- Controllers
+[X]CORS
+[X]Controllers
 - 
 
 Frontend: 
