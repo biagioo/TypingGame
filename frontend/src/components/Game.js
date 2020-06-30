@@ -7,6 +7,7 @@ class Game extends Component{
         return (
             <div>
                 Game 
+                
             </div>
 
         )

@@ -1,12 +1,12 @@
 
-export const setWords = (words) =>({type:'SET_WORDS', payload:words})
+export const setDifficulties = difficulties =>({type:'SET_DIFFICULTIES', payload:difficulties})
 
-export const fetchWords = () =>{
+export const fetchDifficulties= () =>{
     return(dispatch)=>{
-        return fetch('http://localhost:3000/difficulties/1/words')
+        return fetch('http://localhost:3000/difficulties')
         .then(resp => resp.json())
         .then(data =>{
-            dispatch(setWords(data))
+            dispatch(setDifficulties(data))
         })
     }
     // this is fetching words from easy difficulty

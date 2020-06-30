@@ -4,10 +4,10 @@ const manageGame = (state={
     scores:[]
 }, action) => {
     switch(action.type){
-        case 'SET_WORDS' :
+        case 'SET_DIFFICULTIES' :
             return {
                 ...state,
-                words: action.payload
+                difficulties: action.payload
             }
         default:
             return state;

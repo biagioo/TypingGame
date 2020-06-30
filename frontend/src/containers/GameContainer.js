@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
-import Game from '../components/Game'
-import GameInput from '../components/GameInput'
+// import Game from '../components/Game'
+// import GameInput from '../components/GameInput'
 import { connect } from 'react-redux'
-import {fetchWords} from '../actions/gameActions'
-
+import {fetchDifficulties} from '../actions/gameActions'
+import GameDifficulties from '../components/GameDifficulties'
 class GameContainer extends Component{
     
     componentDidMount(){
-        this.props.fetchWords()
+        this.props.fetchDifficulties()
     }
 
     render(){
-        console.log(this.props.words)
+        // console.log(this.props.difficutlties)
         return (
             <div>
                 Game Container
-                <Game />
-                <GameInput />
+                <GameDifficulties difficulties={this.props.difficulties}/>
             </div>
 
         )
@@ -25,11 +24,11 @@ class GameContainer extends Component{
 }
 const mapStateToProps = state => {
     return {
-      words: state.words,
+      difficulties: state.difficulties,
     }
   }
 
-export default connect(mapStateToProps,{fetchWords})(GameContainer)
+export default connect(mapStateToProps,{fetchDifficulties})(GameContainer)
 
 
 

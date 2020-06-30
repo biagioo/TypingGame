@@ -26,5 +26,12 @@ Backend:
 Frontend: 
 Create structure, work from the high level down, reference big labs
 
-Game Container 
+
+flow
+index.js calls
+App.js calls
+GameContainer calls
+GameDiff calls
+Game calls 
+GameInput 
 
