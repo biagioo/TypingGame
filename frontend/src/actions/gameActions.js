@@ -9,5 +9,5 @@ export const fetchDifficulties= () =>{
             dispatch(setDifficulties(data))
         })
     }
-    // this is fetching words from easy difficulty
+   
 }

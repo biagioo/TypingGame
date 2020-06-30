@@ -7,10 +7,10 @@ class Game extends Component{
     }
 
     render(){
+        console.log("here")
         return (
             <div>
                 Game 
-                {this.renderGameWord()}
             </div>
 
         )

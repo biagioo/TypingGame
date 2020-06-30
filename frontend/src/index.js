@@ -10,7 +10,6 @@ import thunk from 'redux-thunk';
 // import * as serviceWorker from './serviceWorker';
 
 
-
 const store = createStore(manageGame, composeWithDevTools(
   applyMiddleware(thunk),
   // other store enhancers if any

@@ -30,8 +30,10 @@ Create structure, work from the high level down, reference big labs
 flow
 -index.js calls
 -App.js calls
+-Navbar
 -GameContainer calls
 -GameDiff calls
-Game calls 
+when select is clicked use a route to render Game component
+---Game calls 
 GameInput 
 
