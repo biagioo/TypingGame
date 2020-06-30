@@ -9,7 +9,6 @@ const manageGame = (state={
             return {
                 ...state,
                 difficulties: action.payload
-
             }
         default:
             return state;

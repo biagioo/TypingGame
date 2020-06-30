@@ -2,7 +2,7 @@ class WordsController < ApplicationController
     before_action :find_difficulty
     
     def index 
-        words = @difficulty.words
+        words = @difficulty.words.shuffle
         render json: words
     end
 

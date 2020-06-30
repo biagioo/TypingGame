@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import GameInput from './GameInput'
+
 class Game extends Component{
 
     state={
         time: 5,
         isPlaying: false,
-        score:0
+        score:0,
+        currentWords:[]
     }
     
     renderGameWords=()=>{

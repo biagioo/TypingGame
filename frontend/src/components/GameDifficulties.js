@@ -5,7 +5,8 @@ import Game from './Game'
 class GameDifficulties extends Component{
     
     state = {
-        difficulty_id:''
+        difficulty_id:'',
+        displayGame:false
     }
     
     renderDifficulties = () =>{
@@ -15,30 +16,41 @@ class GameDifficulties extends Component{
 
     }
 
-    handleChange = event =>{
-        this.setState({ difficulty_id:event.target.value})
-    }
+    // handleChange = event =>{
+    //     this.setState({ difficulty_id:event.target.value})
+    // }
     
     handleOnSubmit = event =>{
         event.preventDefault()
-       console.log("fix me plz")
+        let value = event.target.querySelector("select").value
+       console.log(value)
+       if (value !== "Select Difficulty" )
+       this.setState({
+           difficulty_id:event.target.querySelector("select").value,
+           displayGame:true
+       })
+        //    displayGame if value is between 1-3
        //
     }
      
     render(){
-        return(
-            <div>
+        let render
+        if (this.state.displayGame === false){
+            render = 
                 <form onSubmit={this.handleOnSubmit}>
-                    <label>Choose Game Difficulty
-                        <select onChange={this.handleChange}>
-                        <option value={null}>Select Difficulty</option>
-                        {this.renderDifficulties()}
-                        </select> 
-                    </label>
-                    <input type="submit" value="Submit" />
+                <label>Choose Game Difficulty
+                <select onChange={this.handleChange}>
+                <option value={null}>Select Difficulty</option>
+                {this.renderDifficulties()}
+                </select> 
+                </label>
+                <input type="submit" value="Select" />
                 </form>
-                <Game difficulty_id={this.state.difficulty_id}/>
-            </div>
+        } else {
+            render=<Game difficulty_id={this.state.difficulty_id}/>
+        }
+        return(
+        <div>{render}</div>
         )
     }
 }
