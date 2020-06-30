@@ -1,18 +1,8 @@
-const manageGame = (state={
-    words:[],
-    difficulties:[],
-    scores:[]
-}, action) => {
-    // console.log(action.payload)
-    switch(action.type){
-        case 'SET_DIFFICULTIES' :
-            return {
-                ...state,
-                difficulties: action.payload
-            }
-        default:
-            return state;
-    }
-}
+import { combineReducers } from 'redux';
+import difficulties from './difficulties';
 
-export default manageGame
+const rootReducer = combineReducers({
+    difficulties: difficulties
+  });
+
+export default rootReducer

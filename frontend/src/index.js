@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import manageGame from './reducers/manageGame'
+import rootReducer from './reducers/manageGame'
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -10,8 +10,8 @@ import thunk from 'redux-thunk';
 // import * as serviceWorker from './serviceWorker';
 
 
-const store = createStore(manageGame, composeWithDevTools(
-  applyMiddleware(thunk),
+const store = createStore(rootReducer, composeWithDevTools(
+  applyMiddleware(thunk)
   // other store enhancers if any
 ));
 

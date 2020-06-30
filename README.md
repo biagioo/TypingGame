@@ -31,6 +31,7 @@ game todos:
 -create & render countdown
 -create & render score calculator 
 - connect game and game input
+-fetch multiple reducers
 
 
 flow

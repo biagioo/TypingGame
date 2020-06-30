@@ -23,8 +23,9 @@ class GameContainer extends Component{
 
 }
 const mapStateToProps = state => {
+    // console.log(state)
     return {
-      difficulties: state.difficulties,
+      difficulties: state.difficulties.difficulties,
     }
   }
 

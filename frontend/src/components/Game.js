@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import GameInput from './GameInput'
 
 class Game extends Component{
@@ -10,12 +10,17 @@ class Game extends Component{
         score:0,
         currentWords:[]
     }
+    // componentDidMount(){
+    //     make a fetch request using the difficulty_id
+    // }
     
     renderGameWords=()=>{
-        const difficulty = this.props.difficulties.filter(diff => diff.id == this.props.difficulty_id)
-        const words = difficulty[0].words
+        // const difficulty = this.props.difficulties.filter(diff => diff.id == this.props.difficulty_id)
+        // const words = difficulty[0].words
         
-        console.log(words)
+        console.log(this.props)
+        
+        console.log("make fetch request in component did mount for words based off of user select input")
     }
     
     // renderCountdown=()=>{
@@ -28,8 +33,7 @@ class Game extends Component{
         return (
             <div>
                 Game
-
-                <button onClick={this.renderGameWords}>render words</button>
+                {this.renderGameWords()}
                 <p>words should be rendered here</p>
                 <GameInput />
                 <p>current score is rendered here updating whenever the user types the correct word or time runs out</p>
@@ -39,10 +43,14 @@ class Game extends Component{
     }
 
 }
-const mapStateToProps = state =>{
-    return{
-        difficulties: state.difficulties
-    }
-}
-export default connect(mapStateToProps)(Game)
+// const mapStateToProps = state =>{
+//     return{
+//         difficulties: state.difficulties
+//     }
+// }
+export default Game
 
+//          Game Flow
+//  Start button calls a function that 
+//  - renders words and store them into the local state
+// 

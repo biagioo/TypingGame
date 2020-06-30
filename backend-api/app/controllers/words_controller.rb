@@ -7,7 +7,7 @@ class WordsController < ApplicationController
     end
 
     def show
-        words = @difficulty.words.find_by(id:params[:id])
+        words = @difficulty.words.find_by(id:params[:id]).shuffle
         render json: words
     end
 
