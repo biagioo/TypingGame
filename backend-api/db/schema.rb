@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 2020_06_29_172843) do
   create_table "scores", force: :cascade do |t|
     t.string "display_name"
     t.integer "number"
+    t.integer "difficulty_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["difficulty_id"], name: "index_scores_on_difficulty_id"
   end
 
   create_table "words", force: :cascade do |t|
@@ -33,5 +35,6 @@ ActiveRecord::Schema.define(version: 2020_06_29_172843) do
     t.index ["difficulty_id"], name: "index_words_on_difficulty_id"
   end
 
+  add_foreign_key "scores", "difficulties"
   add_foreign_key "words", "difficulties"
 end

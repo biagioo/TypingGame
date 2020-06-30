@@ -80,17 +80,17 @@ hard.words.create(element:"various")
 hard.words.create(element:"whereas")
 
 
-Score.create(display_name:"biagio", number:1)
-Score.create(display_name:"chris", number:4)
-Score.create(display_name:"sean", number:4)
-Score.create(display_name:"alex", number:5)
-Score.create(display_name:"frank", number:12)
-Score.create(display_name:"sal", number:8)
-Score.create(display_name:"ang", number:7)
-Score.create(display_name:"carmela", number:11)
-Score.create(display_name:"mike", number:17)
-Score.create(display_name:"brian", number:15)
-Score.create(display_name:"anthony", number:4)
+easy.scores.create(display_name:"biagio", number:1)
+easy.scores.create(display_name:"chris", number:4)
+easy.scores.create(display_name:"sean", number:4)
+medium.scores.create(display_name:"alex", number:5)
+medium.scores.create(display_name:"frank", number:12)
+medium.scores.create(display_name:"sal", number:8)
+hard.scores.create(display_name:"ang", number:7)
+hard.scores.create(display_name:"carmela", number:11)
+hard.scores.create(display_name:"mike", number:17)
+easy.scores.create(display_name:"brian", number:15)
+medium.scores.create(display_name:"anthony", number:4)
 
 
 
