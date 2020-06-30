@@ -15,3 +15,7 @@ class Game extends Component{
 }
 
 export default Game
+
+// needs to get words from API
+// needs difficulty selector 
+// 
