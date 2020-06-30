@@ -1,10 +1,17 @@
-export default function ManageGame(state={
-    words:["hey","hello"],
+const manageGame = (state={
+    words:[],
     difficulties:[],
     scores:[]
-}, action){
+}, action) => {
     switch(action.type){
-        case "GET WORDS" :
-            return state.words
+        case 'SET_WORDS' :
+            return {
+                ...state,
+                words: action.payload
+            }
+        default:
+            return state;
     }
 }
+
+export default manageGame
