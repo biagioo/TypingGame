@@ -26,6 +26,12 @@ Backend:
 Frontend: 
 Create structure, work from the high level down, reference big labs
 
+game todos:
+-Shuffle words
+-create & render countdown
+-create & render score calculator 
+- connect game and game input
+
 
 flow
 -index.js calls

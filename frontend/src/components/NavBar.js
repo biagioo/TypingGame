@@ -16,6 +16,12 @@ const NavBar = () => {
       >
         Game
       </NavLink>
+      <NavLink 
+        style={{ marginRight: '10px' }} 
+        to="/scores"
+      >
+        Scores
+      </NavLink>
     </div>
   );
 }

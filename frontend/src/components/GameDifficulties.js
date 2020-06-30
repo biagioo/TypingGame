@@ -5,8 +5,7 @@ import Game from './Game'
 class GameDifficulties extends Component{
     
     state = {
-        difficutly_id:'',
-        difficutly:{}
+        difficulty_id:''
     }
     
     renderDifficulties = () =>{
@@ -17,23 +16,13 @@ class GameDifficulties extends Component{
     }
 
     handleChange = event =>{
-        this.setState({ difficutly_id:event.target.value})
+        this.setState({ difficulty_id:event.target.value})
     }
     
-    // handleClick = () =>{
-    //     const difficulty = this.props.difficulties.filter(diff => diff.id == this.state.difficutly_id)
-    //     const words = difficulty[0].words
-    //     console.log("diff", difficulty)
-    //     console.log("words",words)
-    //     // if(words !== undefined){
-    //     //   return <Game words={words} />
-    //     // }
-    //     // this isnt working because its not in render      
-    // }
-
     handleOnSubmit = event =>{
         event.preventDefault()
        console.log("fix me plz")
+       //
     }
      
     render(){
@@ -48,6 +37,7 @@ class GameDifficulties extends Component{
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
+                <Game difficulty_id={this.state.difficulty_id}/>
             </div>
         )
     }
