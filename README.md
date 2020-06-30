@@ -28,10 +28,10 @@ Create structure, work from the high level down, reference big labs
 
 
 flow
-index.js calls
-App.js calls
-GameContainer calls
-GameDiff calls
+-index.js calls
+-App.js calls
+-GameContainer calls
+-GameDiff calls
 Game calls 
 GameInput 
 

@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 
 class Game extends Component{
     
+    renderGameWord=()=>{
+        console.log(this.props.difficulty)
+    }
 
     render(){
         return (
             <div>
                 Game 
-                
+                {this.renderGameWord()}
             </div>
 
         )
@@ -17,6 +20,6 @@ class Game extends Component{
 
 export default Game
 
-// needs to get words from API
-// needs difficulty selector 
+// needs to get words from API √
+// needs difficulty selector  √
 // 
