@@ -9,5 +9,4 @@ export const fetchDifficulties= () =>{
             dispatch(setDifficulties(data))
         })
     }
-   
 }
