@@ -10,23 +10,16 @@ class GameInput extends Component{
         this.setState({ text: event.target.value})
     }
 
-    handleOnSubmit = event =>{
-        event.preventDefault()
-        console.log(this.state.text)
-        // see if state matches the word being displayed
-        // might not need submit, maybe just check if matches from handleOnChange
-    }
-
     render(){
         return (
             <div>
                 Game Input
-                <form onSubmit={this.handleOnSubmit}>
+                <form >
                     <input 
+                    placeholder="Start Typing..."
                     onChange={this.handleOnChange} 
                     value={this.state.text}
                     type='text' />
-                    <button typer='submit'>Submit</button>
                 </form>
             </div>
 
@@ -36,5 +29,3 @@ class GameInput extends Component{
 }
 
 export default GameInput
-
-// needs controll form 

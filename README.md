@@ -27,11 +27,11 @@ Frontend:
 Create structure, work from the high level down, reference big labs
 
 game todos:
--Shuffle words
--create & render countdown
+-Shuffle words √
+-create & render countdown √
 -create & render score calculator 
 - connect game and game input
--fetch multiple reducers
+- when the user types the right word, display a new word
 
 
 flow
