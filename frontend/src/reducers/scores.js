@@ -12,20 +12,20 @@
 
 
 const scores = (state={
-    easy:[],
-    medium:[],
-    hard:[]
+    Easy:[],
+    Medium:[],
+    Hard:[]
 },action) =>{
     switch(action.type){
         case 'SET_SCORES' :
         const copyState ={...state}    
         action.payload.forEach(score => {
                 if (score.difficulty_id === 1){
-                    copyState.easy.push(score)
+                    copyState.Easy.push(score)
                 } else if (score.difficulty_id === 2){
-                    copyState.medium.push(score)
+                    copyState.Medium.push(score)
                 } else{
-                    copyState.hard.push(score)
+                    copyState.Hard.push(score)
                 }
             });
             return copyState
