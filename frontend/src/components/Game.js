@@ -8,28 +8,29 @@ class Game extends Component{
         timerOn: false,
         timerTime: 5,
         score:0,
-        currentWords:[]
+        words:[],
+        currentWord:''
     }
     componentDidMount = () =>{
         const id = this.props.difficulty_id
         fetch(`http://localhost:3000/difficulties/${id}/words`)
         .then(resp => resp.json())
         .then(data =>{
+            const words = data.map(word=> word.element)
             this.setState({
                 ...this.state,
-                currentWords:data
+                words:words
             })
         })
-    }
-    
-    renderGameWords=()=>{     
-    //    use words in state to display one word at a time 
     }
 
     startGame=()=>{
         // holds all game functions
-        console.log("start")
-       return this.startTimer()
+        if (this.state.timerTime === 5){
+            console.log("start")
+            let word = this.state.words.pop()
+            return (this.startTimer(), this.setState({ currentWord:word }))
+        } 
     }
     
     startTimer = () => {
@@ -57,11 +58,11 @@ class Game extends Component{
         return (
             <div>
                 Game
-                <button onClick={this.startGame}>Start Game</button>
-                <p>words should be rendered here</p>
+                <p>{this.state.currentWord}</p>
                 <p>timer {this.state.timerTime}</p>
                 <GameInput />
-                <p>current score is rendered here updating whenever the user types the correct word or time runs out</p>
+                <p>Current Score {this.state.score}</p>
+                <button onClick={this.startGame}>Start Game</button>
             </div>
 
         )
@@ -74,7 +75,7 @@ export default Game
 //          what is makes up the game?
 //  - selected difficulty of words
 //  - controlled input 
-//  - timer
+//  - timer √
 //  - score
 //  - check that the input matches the word before the timer hits 0 
 //     -if it does, a new word is shown, the timer resets, a point is added to the users score
