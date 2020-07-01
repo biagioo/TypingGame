@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-// import Game from '../components/Game'
-// import GameInput from '../components/GameInput'
 import { connect } from 'react-redux'
 import {fetchDifficulties} from '../actions/gameActions'
 import GameDifficulties from '../components/GameDifficulties'
@@ -11,7 +9,6 @@ class GameContainer extends Component{
     }
 
     render(){
-        // console.log(this.props.difficutlties)
         return (
             <div>
                 Game Container
@@ -23,7 +20,6 @@ class GameContainer extends Component{
 
 }
 const mapStateToProps = state => {
-    // console.log(state)
     return {
       difficulties: state.difficulties.difficulties,
     }
@@ -31,9 +27,3 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps,{fetchDifficulties})(GameContainer)
 
-
-
-
-// should import Game component
-// should have state
-// should import GameInput

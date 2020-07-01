@@ -2,15 +2,10 @@ class ScoresController < ApplicationController
     before_action :find_difficulty
 
     def index 
-        scores = @difficulty.scores.descending
+        # scores = @difficulty.scores.descending
+        scores = Score.all
         render json: scores
     end
-
-    def show
-        score = @difficulty.scores.find_by(id:params[:id])
-        render json: score
-    end
-
 
     private 
 

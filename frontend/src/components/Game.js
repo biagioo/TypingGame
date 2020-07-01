@@ -63,14 +63,11 @@ class Game extends Component{
 
 
     checkInput = () =>{
-        console.log(this.state.userInput)
         const newScore = this.state.score + 1
         if (this.state.userInput === this.state.currentWord) {
             this.setState({score: newScore, currentWord: this.state.words[newScore], timerTime: 5, userInput:''})
             
-        } else  {
-            console.log("else")
-        }
+        } 
     }
 
     postScore = () =>{
