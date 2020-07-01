@@ -5,8 +5,8 @@ import GameInput from './GameInput'
 class Game extends Component{
 
     state={
-        time: 5,
-        isPlaying: false,
+        timerOn: false,
+        timerTime: 5,
         score:0,
         currentWords:[]
     }
@@ -20,30 +20,46 @@ class Game extends Component{
                 currentWords:data
             })
         })
-        // make a fetch request using the difficulty_id
     }
     
-    renderGameWords=()=>{
-        // const difficulty = this.props.difficulties.filter(diff => diff.id == this.props.difficulty_id)
-        // const words = difficulty[0].words
-        
-        console.log(this.state)
-        
-        console.log("make fetch request in component did mount for words based off of user select input")
+    renderGameWords=()=>{     
+    //    use words in state to display one word at a time 
+    }
+
+    startGame=()=>{
+        // holds all game functions
+        console.log("start")
+       return this.startTimer()
     }
     
-    // renderCountdown=()=>{
-    //     const time = this.state.time
-    //     const isPlaying = this.state.isPlaying
-        
-    // }
+    startTimer = () => {
+        this.setState({
+            ...this.state,
+          timerOn: true,
+          timerTime: this.state.timerTime,
+        });
+        this.timer = setInterval(() => {
+          const newTime = this.state.timerTime - 1;
+          if (newTime >= 0) {
+            this.setState({
+              timerTime: newTime
+            });
+          } else {
+            clearInterval(this.timer);
+            this.setState({ timerOn: false });
+            alert("Game Over!");
+          }
+        }, 1000);
+      };
 
     render(){
+        console.log(this.state)
         return (
             <div>
                 Game
-                {this.renderGameWords()}
+                <button onClick={this.startGame}>Start Game</button>
                 <p>words should be rendered here</p>
+                <p>timer {this.state.timerTime}</p>
                 <GameInput />
                 <p>current score is rendered here updating whenever the user types the correct word or time runs out</p>
             </div>
@@ -52,11 +68,7 @@ class Game extends Component{
     }
 
 }
-// const mapStateToProps = state =>{
-//     return{
-//         difficulties: state.difficulties
-//     }
-// }
+
 export default Game
 
 //          what is makes up the game?
