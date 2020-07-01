@@ -10,15 +10,24 @@ class Game extends Component{
         score:0,
         currentWords:[]
     }
-    // componentDidMount(){
-    //     make a fetch request using the difficulty_id
-    // }
+    componentDidMount = () =>{
+        const id = this.props.difficulty_id
+        fetch(`http://localhost:3000/difficulties/${id}/words`)
+        .then(resp => resp.json())
+        .then(data =>{
+            this.setState({
+                ...this.state,
+                currentWords:data
+            })
+        })
+        // make a fetch request using the difficulty_id
+    }
     
     renderGameWords=()=>{
         // const difficulty = this.props.difficulties.filter(diff => diff.id == this.props.difficulty_id)
         // const words = difficulty[0].words
         
-        console.log(this.props)
+        console.log(this.state)
         
         console.log("make fetch request in component did mount for words based off of user select input")
     }
