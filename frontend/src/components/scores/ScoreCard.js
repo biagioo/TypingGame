@@ -1,9 +1,11 @@
 import React from 'react'
 
-const ScoreCards = props =>{
+const ScoreCard = props =>{
    <div>
-       {console.log(props)}
+       {props.scores.map(score =>
+           <h5>{score.displayname}</h5>
+       )}
    </div>
 }
 
-export default ScoreCards
+export default ScoreCard

@@ -93,6 +93,7 @@ class Game extends Component{
         } else {
             return (
                 <div>
+            {/* component for score */}
                     <h3>Here is Your Final Score: </h3>
                     <h4>{this.state.score}</h4>
                     {this.postScore()}
