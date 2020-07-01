@@ -6,6 +6,7 @@ class Game extends Component{
 
     state={
         timerOn: false,
+        isGameCompleted: false,
         timerTime: 5,
         score: 0,
         words:[],
@@ -27,11 +28,8 @@ class Game extends Component{
     }
 
     startGame=()=>{
-        // holds functions that need to be fired when game starts
         if (this.state.timerTime === 5){
             console.log("start")
-            // let word = this.state.words.pop()
-
             return (this.startTimer(), this.setState(prevState =>({ currentWord:prevState.words[prevState.score] })))
         } 
     }
@@ -50,7 +48,7 @@ class Game extends Component{
             })
           } else {
             clearInterval(this.timer)
-            this.setState({ timerOn: false })
+            this.setState({ timerOn: false, isGameCompleted: true })
             alert("Game Over!")
           }
         }, 1000);
@@ -75,24 +73,35 @@ class Game extends Component{
         }
     }
 
+    postScore = () =>{
+        console.log("post score",this.state.score)
+    }
+
     render(){
-        // console.log(this.state.userInput)
-        return (
-            <div>
-                Game
-                <p>{this.state.currentWord}</p>
-                <p>timer {this.state.timerTime}</p>
-
-                    <input 
-                    placeholder="Start Typing..."
-                    onChange={this.handleOnChange} 
-                    value={this.state.userInput}
-                    type='text' />
-                <p>Current Score {this.state.score}</p>
-                <button onClick={this.startGame}>Start Game</button>
-            </div>
-
-        )
+        if (this.state.isGameCompleted === false){
+            return (
+                <div>
+                    Game
+                    <p>{this.state.currentWord}</p>
+                    <p>timer {this.state.timerTime}</p>
+                        <input 
+                        placeholder="Start Typing..."
+                        onChange={this.handleOnChange} 
+                        value={this.state.userInput}
+                        type='text' />
+                    <p>Current Score {this.state.score}</p>
+                    <button onClick={this.startGame}>Start Game</button>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <h3>Here is Your Final Score: </h3>
+                    <h4>{this.state.score}</h4>
+                    {this.postScore()}
+                </div>
+            )
+        }
     }
 
 }

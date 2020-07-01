@@ -26,12 +26,14 @@ Backend:
 Frontend: 
 Create structure, work from the high level down, reference big labs
 
+refactor difficulties store
+
 game todos:
 -Shuffle words √
 -create & render countdown √
--create & render score calculator 
-- connect game and game input
-- when the user types the right word, display a new word
+-create & render score calculator√ 
+- connect game and game input√
+- when the user types the right word, display a new word√
 
 
 flow
