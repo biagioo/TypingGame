@@ -50,7 +50,14 @@ class Game extends Component{
 // }
 export default Game
 
-//          Game Flow
-//  Start button calls a function that 
-//  - renders words and store them into the local state
-// 
+//          what is makes up the game?
+//  - selected difficulty of words
+//  - controlled input 
+//  - timer
+//  - score
+//  - check that the input matches the word before the timer hits 0 
+//     -if it does, a new word is shown, the timer resets, a point is added to the users score
+//     -if it doesnt, "game over " is displayed, 
+//     the game stops,
+//     the score is saved and the user is shown a link to the scores for the difficulty
+//      
