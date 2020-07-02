@@ -12,37 +12,14 @@ Difficulties are
 
 
 Todos:
-
-Check Checklist on project requirements page
-
-Backend: 
-[X]Models: difficulties, score, words
-[X]Associations
-- logic for models
-[X]CORS
-[X]Controllers
-- 
-
-Frontend: 
-Create structure, work from the high level down, reference big labs
-
-refactor difficulties store
-
-game todos:
--Shuffle words √
--create & render countdown √
--create & render score calculator√ 
-- connect game and game input√
-- when the user types the right word, display a new word√
+[] refactor difficulties store
+[] refactor ScoreCard component
+[] fix duplication issue
+[] Post score to backend with display_name once user is finished with Game
+[] Populate home page
+[] Style
+[] CLEAN CODE 
+[] 
 
 
-flow
--index.js calls
--App.js calls
--Navbar
--GameContainer calls
--GameDiff calls
-when select is clicked use a route to render Game component
----Game calls 
-GameInput 
 

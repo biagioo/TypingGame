@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
-// import GameInput from './GameInput'
+import PostScore from '../components/scores/PostScore'
 
 class Game extends Component{
 
@@ -29,7 +28,6 @@ class Game extends Component{
 
     startGame=()=>{
         if (this.state.timerTime === 5){
-            console.log("start")
             return (this.startTimer(), this.setState(prevState =>({ currentWord:prevState.words[prevState.score] })))
         } 
     }
@@ -70,9 +68,7 @@ class Game extends Component{
         } 
     }
 
-    postScore = () =>{
-        console.log("post score",this.state.score)
-    }
+    
 
     render(){
         if (this.state.isGameCompleted === false){
@@ -93,10 +89,10 @@ class Game extends Component{
         } else {
             return (
                 <div>
-            {/* component for score */}
-                    <h3>Here is Your Final Score: </h3>
-                    <h4>{this.state.score}</h4>
-                    {this.postScore()}
+                    <PostScore 
+                    difficulty_id={this.props.difficulty_id}
+                    score={this.state.score}
+                    />
                 </div>
             )
         }

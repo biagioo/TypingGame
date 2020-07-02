@@ -1,15 +1,3 @@
-// const scores = (state=[],action) =>{
-//     switch(action.type){
-//         case 'SET_SCORES' :
-//             // console.log(action.payload)
-//             return [action.payload]
-//         default:
-//             return state;
-//     }
-// }
-
-// export default scores
-
 
 const scores = (state={
     Easy:[],

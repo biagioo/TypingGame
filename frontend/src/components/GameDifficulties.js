@@ -10,7 +10,6 @@ class GameDifficulties extends Component{
     }
     
     renderDifficulties = () =>{
-        console.log(this.props.difficulties)
         return( this.props.difficulties.map(diff =>{
             return <option key={diff.id} value={diff.id}>{diff.level}</option>
         }))
