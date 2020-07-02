@@ -31,12 +31,12 @@ class PostScore extends Component{
     }
 
     render(){
-        if (this.state.submittedScore == false){
+        if (this.state.submittedScore === false){
             return(
                 <div>
                     <h3>Here is Your Final Score: </h3>
                     <h4>{this.props.score}</h4>
-                    <span>If you'd like to save your score, please enter a display name:</span>
+                    <span> Please enter a display name for your Score to be displayed on the Score Board:</span>
                     <form onSubmit={this.handleSubmit}>
                         <input 
                         onChange={this.handleChange}
@@ -50,7 +50,7 @@ class PostScore extends Component{
             return(
                 <>
                     <h3> Your Score was Submitted!</h3>
-                    <p>Click the Scores link to see if you made in into the top 3!</p>
+                    <p>Click the Scores link to see if you made the top 3!</p>
                 </>
             )
         }

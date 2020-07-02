@@ -30,8 +30,6 @@ class ScoresContainer extends Component{
    
 
     render(){
-        console.log(this.state.userSelection)
-        
             return(
                 <div>
                     <h3>Scores</h3>

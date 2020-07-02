@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {fetchDifficulties} from '../actions/gameActions'
-import GameDifficulties from '../components/GameDifficulties'
+import GameDifficulties from '../components/game/GameDifficulties'
 class GameContainer extends Component{
     
     componentDidMount(){
@@ -11,10 +11,9 @@ class GameContainer extends Component{
     render(){
         return (
             <div>
-                Game Container
+                <h1>The Typing Game</h1>
                 <GameDifficulties difficulties={this.props.difficulties}/>
             </div>
-
         )
     }
 

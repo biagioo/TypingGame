@@ -15,22 +15,15 @@ class GameDifficulties extends Component{
         }))
 
     }
-
-    // handleChange = event =>{
-    //     this.setState({ difficulty_id:event.target.value})
-    // }
     
     handleOnSubmit = event =>{
         event.preventDefault()
         let value = event.target.querySelector("select").value
-    //    console.log(value)
        if (value !== "Select Difficulty" )
        this.setState({
            difficulty_id:event.target.querySelector("select").value,
            displayGame:true
-       })
-        //    displayGame if value is between 1-3
-       
+       })   
     }
      
     render(){
