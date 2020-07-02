@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {fetchDifficulties} from '../actions/gameActions'
 import GameDifficulties from '../components/game/GameDifficulties'
+
 class GameContainer extends Component{
     
     componentDidMount(){

@@ -4,11 +4,11 @@ Todos:
 [X] Populate home page
 [X] Style
 [X] CLEAN CODE 
-[] add logic if there are no more words
+[X] add logic if there are no more words
 [] refactor difficulties store (state)
 [X] refactor ScoreCard component
 [X] fix duplication issue
-[] 1 more stateless component
+[X] 1 more stateless component
 
 
 
