@@ -6,7 +6,8 @@ import ScoreCard from '../components/scores/ScoreCard'
 class ScoresContainer extends Component{
     
     state={
-        userSelection:''
+        userSelection:'',
+        selectedScores:[]
     }
     
     componentDidMount(){
@@ -16,7 +17,10 @@ class ScoresContainer extends Component{
     handleOnSubmit = event =>{
         event.preventDefault()
         let value = event.target.querySelector("select").value
-        this.setState({userSelection:value})
+        console.log(this)
+        const selectedScores = this.props.scores[value]
+        // debugger
+        this.setState({userSelection:value, selectedScores})
 
     }
 
@@ -34,7 +38,7 @@ class ScoresContainer extends Component{
                 <div>
                     <h3>Scores</h3>
                     <form onSubmit={this.handleOnSubmit}>
-                        <label>Choose Which Scores You'd like to see
+                        <label>Select a Difficulty to view the top Three Scores:
                         <select >
                         <option value='select'>Select Scores</option>    
                         {this.renderDropDown()}
@@ -43,7 +47,7 @@ class ScoresContainer extends Component{
                         <input type="submit" value="Select" />
                     </form>
                     <div>
-                       <ScoreCard scores={this.props.scores} userSelection={this.state.userSelection}/>
+                       <ScoreCard scores={this.state.selectedScores} userSelection={this.state.userSelection}/>
                     </div>
                 </div>
             )

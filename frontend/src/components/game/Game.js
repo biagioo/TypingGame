@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PostScore from '../scores/PostScore'
+import HighestScore from './HighestScore'
 
 class Game extends Component{
 
@@ -10,6 +11,7 @@ class Game extends Component{
         score: 0,
         words:[],
         currentWord:'',
+        highestScore: false,
         userInput:''
     }
 
@@ -35,14 +37,18 @@ class Game extends Component{
     startTimer = () => {
         this.setState({
             ...this.state,
-          timerOn: true,
-          timerTime: this.state.timerTime,
+          timerOn: true
         })
         this.timer = setInterval(() => {
           const newTime = this.state.timerTime - 1
           if (newTime >= 0) {
             this.setState({
               timerTime: newTime
+            }, ()=>{
+                if (this.state.score === 42) {
+                    this.setState({isGameCompleted: true, highestScore:true, timerOn:false})
+                    clearInterval(this.timer)
+                }
             })
           } else {
             clearInterval(this.timer)
@@ -59,13 +65,18 @@ class Game extends Component{
 
     }
 
-
     checkInput = () =>{
         const newScore = this.state.score + 1
         if (this.state.userInput === this.state.currentWord) {
-            this.setState({score: newScore, currentWord: this.state.words[newScore], timerTime: 5, userInput:''})
-            
-        } 
+            this.setState({score: newScore, currentWord: this.state.words[newScore], timerTime: 5, userInput:''})    
+        }
+        
+    }
+
+    checkScore = () =>{
+        if (this.state.score === 2) {
+            this.setState({isGameCompleted: true, highestScore:true, timerOn:false})
+        }
     }
 
     
@@ -85,6 +96,13 @@ class Game extends Component{
                     <p>Current Score {this.state.score}</p>
                     <button onClick={this.startGame}>Start Game</button>
                 </div>
+            )
+        } else if (this.state.highestScore === true) {
+            return(
+                <HighestScore 
+                score={this.state.score}
+                difficulty_id={this.props.difficulty_id}
+                />
             )
         } else {
             return (

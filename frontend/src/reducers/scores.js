@@ -6,7 +6,11 @@ const scores = (state={
 },action) =>{
     switch(action.type){
         case 'SET_SCORES' :
-        const copyState ={...state}    
+        const copyState ={
+            Easy:[],
+            Medium:[],
+            Hard:[]
+        }    
         action.payload.forEach(score => {
                 if (score.difficulty_id === 1){
                     copyState.Easy.push(score)
