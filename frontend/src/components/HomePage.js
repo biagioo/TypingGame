@@ -1,8 +1,14 @@
 import React from 'react'
 
 const HomePage = () =>{
+    const mystyle = {
+        color: "white",
+        backgroundColor: "DodgerBlue",
+        padding: "10px",
+        fontFamily: "Arial"
+      }
     return(
-        <div>
+        <div style={mystyle}>
             <h1>Welcome to The Typing Game!</h1>
             <h3>Instructions:</h3>
             <p>

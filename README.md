@@ -5,8 +5,9 @@ Todos:
 [] fix duplication issue
 [X] Post score to backend with display_name once user is finished with Game
 [X] Populate home page
-[] Style
+[X] Style
 [X] CLEAN CODE 
+[] 1 more stateless component
 
 
 
