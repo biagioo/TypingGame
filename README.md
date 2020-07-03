@@ -1,18 +1,32 @@
+Welcome to The Typing Game!
 
-Todos:
-[X] Post score to backend with display_name once user is finished with Game
-[X] Populate home page
-[X] Style
-[X] CLEAN CODE 
-[X] add logic if there are no more words
-[X] refactor ScoreCard component
-[X] fix duplication issue
-[X] 1 more stateless component
-[X] ask about file structure
-[X] typing before start game
-[X] refactor game logic
-[] check list
-[X] gif me playing Home page
+This App was Built with Ruby on Rails, React and Redux langauges/libraries. 
+
+About:
+ Select which difficulty you'd like to play on. 
+ 
+ Easy is 4 letter words, Medium is 5-6 letter words, Hard is 7 letter words. 
+ 
+ After the game is over, you'll be asked for a display name for your score to be seen on the score board. 
+ 
+ The score board only shows the top 3 scores for each difficulty.
+ 
+ Feel Free to use the NavBar to Check the scores before playing! Enjoy!
+
+
+Installation:
+
+Backend:
+- CD into backend-api
+- run bundle install
+- run rails db:migrate
+- run rails db:seed
+
+Frontend:
+- CD into frontend
+- run npm install
+- run npm start
+
 
 
 
