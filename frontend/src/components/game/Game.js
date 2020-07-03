@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PostScore from '../scores/PostScore'
 import HighestScore from './HighestScore'
 
+
 class Game extends Component{
 
     state={
@@ -83,13 +84,21 @@ class Game extends Component{
 
     render(){
         if (this.state.isGameCompleted === false){
+
+            const gameWordStyle = {
+                padding: "10px 20px",
+                background: 'lightsteelblue',
+                border: '5px solid black',
+                fontSize: "22px",
+                color: 'black',
+            }
             return (
                 <div>
-                    Game
-                    <p>{this.state.currentWord}</p>
-                    <p>timer {this.state.timerTime}</p>
+                    <h3>Click Start Game and Start Typing!</h3>
+                    <span style={gameWordStyle}>{this.state.currentWord}</span>
+                    <p style={{color:'red'}}>Timer: {this.state.timerTime}</p>
                         <input 
-                        placeholder="Start Typing..."
+                        placeholder="..."
                         onChange={this.handleOnChange} 
                         value={this.state.userInput}
                         type='text' />

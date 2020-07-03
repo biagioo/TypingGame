@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 
+
 class PostScore extends Component{
 
     state={
         display_name:'',
         submittedScore:false
     }
-    
+  
     handleChange = event =>{
         this.setState({ display_name:event.target.value})
     }

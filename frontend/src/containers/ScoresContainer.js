@@ -17,11 +17,8 @@ class ScoresContainer extends Component{
     handleOnSubmit = event =>{
         event.preventDefault()
         let value = event.target.querySelector("select").value
-        console.log(this)
         const selectedScores = this.props.scores[value]
-        // debugger
         this.setState({userSelection:value, selectedScores})
-
     }
 
     renderDropDown = () =>{
