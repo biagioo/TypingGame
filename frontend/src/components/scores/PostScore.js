@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { withRouter } from "react-router"
 
 class PostScore extends Component{
 
@@ -29,6 +29,7 @@ class PostScore extends Component{
         })
         .then(resp =>resp.json())
         .then(data => this.setState({submittedScore:data}))
+        .then(()=> setTimeout(()=>this.props.history.push('/scores'), 2000))
     }
 
     render(){
@@ -51,11 +52,11 @@ class PostScore extends Component{
             return(
                 <>
                     <h3> Your Score was Submitted!</h3>
-                    <p>Click the Scores link to see if you made the top 3!</p>
+                    <p>You'll be redirected to the Scores Page, Check to see if you made it into the Top 3!</p>
                 </>
             )
         }
     }
 }
 
-export default PostScore
+export default withRouter (PostScore)

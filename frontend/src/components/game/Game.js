@@ -12,6 +12,7 @@ class Game extends Component{
         score: 0,
         words:[],
         currentWord:'',
+        inputDisable: true,
         highestScore: false,
         userInput:''
     }
@@ -30,6 +31,7 @@ class Game extends Component{
     }
 
     startGame=()=>{
+        // this.setState({inputDisable: false})
         if (this.state.timerTime === 5){
             return (this.startTimer(), this.setState(prevState =>({ currentWord:prevState.words[prevState.score] })))
         } 
@@ -38,8 +40,10 @@ class Game extends Component{
     startTimer = () => {
         this.setState({
             ...this.state,
-          timerOn: true
+          timerOn: true,
+          inputDisable: false
         })
+        
         this.timer = setInterval(() => {
           const newTime = this.state.timerTime - 1
           if (newTime >= 0) {
@@ -57,7 +61,7 @@ class Game extends Component{
             alert("Game Over!")
           }
         }, 1000);
-      };
+    };
 
     handleOnChange = event =>{
         this.setState({ userInput: event.target.value}, () =>{
@@ -98,6 +102,7 @@ class Game extends Component{
                     <span style={gameWordStyle}>{this.state.currentWord}</span>
                     <p style={{color:'red'}}>Timer: {this.state.timerTime}</p>
                         <input 
+                        disabled= {this.state.inputDisable}
                         placeholder="..."
                         onChange={this.handleOnChange} 
                         value={this.state.userInput}
