@@ -10,8 +10,8 @@ const displayNameStyle = {
 
 
 const scoreStyle = {
-    color: "white",
-    backgroundColor: "DodgerBlue",
+    color: "crimson",
+    backgroundColor: "lightcyan",
     padding: "10px",
     fontFamily: "Arial"
   }

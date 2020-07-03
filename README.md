@@ -10,9 +10,9 @@ Todos:
 [X] 1 more stateless component
 [X] ask about file structure
 [X] typing before start game
-[] refactor game logic
+[X] refactor game logic
 [] check list
-[] gif me playing Home page
+[X] gif me playing Home page
 
 
 

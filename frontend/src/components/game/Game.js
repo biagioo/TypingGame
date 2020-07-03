@@ -49,19 +49,25 @@ class Game extends Component{
           if (newTime >= 0) {
             this.setState({
               timerTime: newTime
-            }, ()=>{
-                if (this.state.score === 42) {
-                    this.setState({isGameCompleted: true, highestScore:true, timerOn:false})
-                    clearInterval(this.timer)
-                }
-            })
+            }, this.gameBeaten())
           } else {
-            clearInterval(this.timer)
-            this.setState({ timerOn: false, isGameCompleted: true })
-            alert("Game Over!")
+            this.gameOver()
           }
         }, 1000);
     };
+
+    gameBeaten = () =>{
+        if (this.state.score === 42) {
+            this.setState({isGameCompleted: true, highestScore:true, timerOn:false})
+            clearInterval(this.timer)
+        }
+    }
+
+    gameOver = () =>{
+        clearInterval(this.timer)
+        this.setState({ timerOn: false, isGameCompleted: true })
+        alert("Game Over!")
+    }
 
     handleOnChange = event =>{
         this.setState({ userInput: event.target.value}, () =>{
@@ -75,7 +81,6 @@ class Game extends Component{
         if (this.state.userInput === this.state.currentWord) {
             this.setState({score: newScore, currentWord: this.state.words[newScore], timerTime: 5, userInput:''})    
         }
-        
     }
 
     checkScore = () =>{
@@ -83,8 +88,6 @@ class Game extends Component{
             this.setState({isGameCompleted: true, highestScore:true, timerOn:false})
         }
     }
-
-    
 
     render(){
         if (this.state.isGameCompleted === false){
