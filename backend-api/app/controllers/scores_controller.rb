@@ -1,14 +1,12 @@
 class ScoresController < ApplicationController
 
-    # change to high scores
-    def index 
-        # scores = @difficulty.scores.descending
+    
+    def high_scores
         hardDiff = Difficulty.find_by(id: 3).scores.descending[0..2]
         medDiff = Difficulty.find_by(id: 2).scores.descending[0..2]
         easyDiff = Difficulty.find_by(id: 1).scores.descending[0..2]
         topScores = []
         topScores.push(hardDiff).push(medDiff).push(easyDiff).flatten!
-        # byebug
         render json: topScores
     end
 

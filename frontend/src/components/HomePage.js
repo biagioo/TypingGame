@@ -13,7 +13,7 @@ const HomePage = () =>{
             <p>After the game is over, you'll be asked for a display name for your score to be seen on the score board. </p>
             <p>The score board only shows the top 3 scores for each difficulty.</p>
             <p>Enjoy!</p>
-            <img style={{border: '5px solid black',}}src={typingGif} alt="GIf Loading..." />
+            <img style={{border: '5px solid white',}}src={typingGif} alt="GIf Loading..." />
 
         </div>
     )

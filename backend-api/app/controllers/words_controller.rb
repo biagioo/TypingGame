@@ -6,11 +6,6 @@ class WordsController < ApplicationController
         render json: words
     end
 
-    def show
-        words = @difficulty.words.find_by(id:params[:id]).shuffle
-        render json: words
-    end
-
     private 
 
     def find_difficulty 

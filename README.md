@@ -19,13 +19,19 @@ Installation:
 Backend:
 - CD into backend-api
 - run bundle install
-- run rails db:migrate
-- run rails db:seed
+- run 'rails db:migrate'
+- run 'rails db:seed'
 
 Frontend:
 - CD into frontend
-- run npm install
-- run npm start
+- run 'npm install'
+
+
+To start the application:
+
+- CD into backend-api and run 'rails s'
+- CD into frontend and run 'npm start'
+
 
 
 
