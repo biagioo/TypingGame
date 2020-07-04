@@ -7,6 +7,8 @@ About:
  
  Easy is 4 letter words, Medium is 5-6 letter words, Hard is 7 letter words. 
  
+ You have 5 seconds to write the word displayed, each word you type correctly adds a point to your score.
+ 
  After the game is over, you'll be asked for a display name for your score to be seen on the score board. 
  
  The score board only shows the top 3 scores for each difficulty.
