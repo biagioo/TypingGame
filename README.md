@@ -1,3 +1,5 @@
+HELLO WORLD
+
 Welcome to The Typing Game!
 
 This App was Built with Ruby on Rails, React and Redux langauges/libraries. 
