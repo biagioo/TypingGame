@@ -1,61 +1,69 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import {fetchScores} from '../actions/scoreActions'
-import ScoreCard from '../components/scores/ScoreCard'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {fetchAllScores} from '../actions/scoreActions';
+import ScoreCard from '../components/scores/ScoreCard';
 
-class ScoresContainer extends Component{
-    
-    state={
-        userSelection:'',
-        selectedScores:[]
-    }
-    
-    componentDidMount(){
-        this.props.fetchScores()
-    }
+class ScoresContainer extends Component {
+  state = {
+    userInput: '',
+    selectedDifficulty: '',
+  };
 
-    handleOnSubmit = event =>{
-        event.preventDefault()
-        let value = event.target.querySelector("select").value
-        const selectedScores = this.props.scores[value]
-        this.setState({userSelection:value, selectedScores})
-    }
+  componentDidMount() {
+    this.props.fetchAllScores();
+  }
 
-    renderDropDown = () =>{
-        const keys = Object.keys(this.props.scores)
-        return(keys.map((name,idx)=>{
-            return <option value={name}key={idx}>{name}</option>
-        }))
-    }
+  handleChange = (event) => {
+    this.setState({selectedDifficulty: event.target.value});
+  };
 
+  handleInputChange = (event) => {
+    this.setState({userInput: event.target.value});
+  };
+
+  filterScores = () => {
+    // let re = new RegExp(`^${this.state.userInput}`, 'i')
+    return this.props.scores.filter(
+      (score) =>
+        score.display_name
+          .toLowerCase()
+          .includes(this.state.userInput.toLowerCase()) &&
+        score.difficulty_level.includes(this.state.selectedDifficulty)
+    );
+  };
+
+  render() {
    
-
-    render(){
-            return(
-                <div>
-                    <h3>Scores</h3>
-                    <form onSubmit={this.handleOnSubmit}>
-                        <label>Select a Difficulty to view the top Three Scores:
-                        <select >
-                        <option value='select'>Select Scores</option>    
-                        {this.renderDropDown()}
-                        </select> 
-                        </label>
-                        <input type="submit" value="Select" />
-                    </form>
-                    <div>
-                       <ScoreCard scores={this.state.selectedScores} userSelection={this.state.userSelection}/>
-                    </div>
-                </div>
-            )
-        
-    }
+    return (
+      <div>
+        <h3>Scores</h3>
+        <label>Seach a display name:</label>
+        <input type="text" onChange={this.handleInputChange} />
+        <form onSubmit={this.handleOnSubmit}>
+          <label>
+            Select an option to change which scores are shown:
+            <select onChange={this.handleChange}>
+              <option value="">All Scores</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
+          </label>
+        </form>
+        <div>
+          {this.filterScores().map((score) => (
+            <ScoreCard key={score.id} score={score} />
+          ))}
+        </div>
+      </div>
+    );
+  }
 }
 
-const mapStateToProps = state =>{
-    return{
-        scores: state.scores
-    }
-}
+const mapStateToProps = (state) => {
+  return {
+    scores: state.scores.All
+  };
+};
 
-export default connect(mapStateToProps, {fetchScores})(ScoresContainer)
+export default connect(mapStateToProps, {fetchAllScores})(ScoresContainer);

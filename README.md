@@ -1,5 +1,3 @@
-HELLO WORLD
-
 Welcome to The Typing Game!
 
 This App was Built with Ruby on Rails, React and Redux langauges/libraries. 
@@ -19,6 +17,8 @@ About:
 
 
 Installation:
+- Clone this repository down onto your local enviroment
+- CD into it
 
 Backend:
 - CD into backend-api

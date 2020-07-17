@@ -48,7 +48,7 @@ class PostScore extends Component{
             return(
                 <>
                     <h3> Your Score was Submitted!</h3>
-                    <p>You'll be redirected to the Scores Page, Check to see if you made it into the Top 3!</p>
+                    <p>Check the Scores Page to see you score on the score board!</p>
                 </>
             )
         }
