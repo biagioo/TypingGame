@@ -31,18 +31,18 @@ class Game extends Component{
     }
 
     startGame=()=>{
-        // this.setState({inputDisable: false})
         if (this.state.timerTime === 5){
-            return (this.startTimer(), this.setState(prevState =>({ currentWord:prevState.words[prevState.score] })))
+          this.startTimer()
         } 
     }
     
     startTimer = () => {
-        this.setState({
+        this.setState(prevState => ({
             ...this.state,
           timerOn: true,
-          inputDisable: false
-        })
+          inputDisable: false,
+          currentWord: prevState.words[prevState.score]
+        }))
         
         this.timer = setInterval(() => {
           const newTime = this.state.timerTime - 1
@@ -80,12 +80,6 @@ class Game extends Component{
         const newScore = this.state.score + 1
         if (this.state.userInput === this.state.currentWord) {
             this.setState({score: newScore, currentWord: this.state.words[newScore], timerTime: 5, userInput:''})    
-        }
-    }
-
-    checkScore = () =>{
-        if (this.state.score === 2) {
-            this.setState({isGameCompleted: true, highestScore:true, timerOn:false})
         }
     }
 

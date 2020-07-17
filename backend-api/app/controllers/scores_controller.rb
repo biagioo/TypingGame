@@ -20,7 +20,7 @@ class ScoresController < ApplicationController
         end
 
     end
-
+# end point showing all scores 
     private
 
     def score_params

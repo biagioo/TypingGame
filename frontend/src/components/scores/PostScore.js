@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { withRouter } from "react-router"
+// import { withRouter } from "react-router"
+import {connect } from 'react-redux'
+import {postScore} from '../../actions/scoreActions'
 
 class PostScore extends Component{
 
@@ -14,22 +16,16 @@ class PostScore extends Component{
     
     handleSubmit = event =>{
         event.preventDefault()
-        const url = 'http://localhost:3000/scores'
+        console.log('a')
         let newScore = {
             display_name:this.state.display_name,
             difficulty_id:+this.props.difficulty_id,
             number:this.props.score
         }
-        fetch(url, {
-            method: 'POST', 
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newScore)
-        })
-        .then(resp =>resp.json())
+        this.props.postScore(newScore)
         .then(data => this.setState({submittedScore:data}))
-        .then(()=> setTimeout(()=>this.props.history.push('/scores'), 2000))
+        console.log('g')
+        // .then(()=> setTimeout(()=>this.props.history.push('/scores'), 2000))
     }
 
     render(){
@@ -59,4 +55,4 @@ class PostScore extends Component{
     }
 }
 
-export default withRouter (PostScore)
+export default connect (null, {postScore}) (PostScore)
