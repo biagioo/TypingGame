@@ -20,7 +20,14 @@ class ScoresController < ApplicationController
         end
 
     end
-# end point showing all scores 
+
+
+    def index
+        scores = Score.all
+        render json: scores
+    end
+
+
     private
 
     def score_params
