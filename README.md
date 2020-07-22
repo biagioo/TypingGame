@@ -2,6 +2,8 @@ Welcome to The Typing Game!
 
 This App was Built with Ruby on Rails, React and Redux langauges/libraries. 
 
+Check ou the demo video here! https://drive.google.com/file/d/1Rrt2VFNhYFobtLjD1-xlZIbDNAxaldDm/view?usp=sharing
+
 About:
  Select which difficulty you'd like to play on. 
  
