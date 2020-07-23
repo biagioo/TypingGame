@@ -1,4 +1,4 @@
-Welcome to The Typing Game!
+#Welcome to The Typing Game!
 
  ![alt-text](/frontend/src/gif/typing.gif)
 
@@ -7,7 +7,7 @@ This App was Built with Ruby on Rails, React and Redux langauges/libraries.
 
 Check out the demo video here! https://drive.google.com/file/d/1Rrt2VFNhYFobtLjD1-xlZIbDNAxaldDm/view?usp=sharing
 
-About:
+##About:
  Select which difficulty you'd like to play on. 
  
  Easy is 4 letter words, Medium is 5-6 letter words, Hard is 7 letter words. 
@@ -21,17 +21,17 @@ About:
  Feel Free to use the NavBar to Check the scores before playing! Enjoy!
 
 
-Installation:
+##Installation:
 - Clone this repository down onto your local enviroment
 - CD into it
 
-Backend:
+###Backend:
 - CD into backend-api
 - run bundle install
 - run 'rails db:migrate'
 - run 'rails db:seed'
 
-Frontend:
+###Frontend:
 - CD into frontend
 - run 'npm install'
 
