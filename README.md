@@ -1,6 +1,6 @@
 Welcome to The Typing Game!
 
- ![alt-text](link)
+ ![alt-text](/frontend/src/gif/typing.gif)
 
 
 This App was Built with Ruby on Rails, React and Redux langauges/libraries. 
