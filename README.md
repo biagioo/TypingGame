@@ -5,7 +5,7 @@
 
 This App was Built with Ruby on Rails, React and Redux langauges/libraries. 
 
-Check out the demo video [here](https://drive.google.com/file/d/1Rrt2VFNhYFobtLjD1-xlZIbDNAxaldDm/view?usp=sharing) or read about it [here](https://dev.to/mindful_developer/react-redux-project-aaj)
+Check out the demo (video](https://drive.google.com/file/d/1Rrt2VFNhYFobtLjD1-xlZIbDNAxaldDm/view?usp=sharing) or [read](https://dev.to/mindful_developer/react-redux-project-aaj) about it.
 
 ## Functionality
  Select which difficulty you'd like to play on. 
