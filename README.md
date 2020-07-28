@@ -1,21 +1,23 @@
 # Welcome to The Typing Game!
 
+![alt-text](/frontend/src/gif/typing.gif)
+
 This App was Built with Ruby on Rails, React and Redux langauges/libraries.
 
-## About:
-
-Select which difficulty you'd like to play on.
-Easy is 4 letter words, Medium is 5-6 letter words, Hard is 7 letter words.
 Check out the demo [video](https://drive.google.com/file/d/1Rrt2VFNhYFobtLjD1-xlZIbDNAxaldDm/view?usp=sharing) or [read](https://dev.to/mindful_developer/react-redux-project-aaj) about it.
 
 ## Functionality
 
 Select which difficulty you'd like to play on.
+
 Easy is 4 letter words, Medium is 5-6 letter words, Hard is 7 letter words.
+
 You have 5 seconds to write the word displayed, each word you type correctly adds a point to your score.
+
 After the game is over, you'll be asked for a display name for your score to be seen on the score board.
+
 The score board you to search by name and filter by difficulty.
-Feel Free to use the NavBar to Check the scores before playing! Enjoy!
+
 Feel Free to use the NavBar to Check the scores before playing! Enjoy!
 
 ## Installation:
