@@ -57,7 +57,7 @@ class Game extends Component{
     };
 
     gameBeaten = () =>{
-        if (this.state.score === 42) {
+        if (this.state.score === 21) {
             this.setState({isGameCompleted: true, highestScore:true, timerOn:false})
             clearInterval(this.timer)
         }
