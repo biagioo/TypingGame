@@ -1,6 +1,6 @@
 export const postScore = (newScore) => {
   return (dispatch) => {
-    return fetch('http://localhost:3000/scores', {
+    return fetch('https://typing-game-api.herokuapp.com/scores', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ export const setAllScores = (scores) => ({type: 'ALL_SCORES', payload: scores});
 
 export const fetchAllScores = () => {
   return (dispatch) => {
-    return fetch('http://localhost:3000/scores')
+    return fetch('https://typing-game-api.herokuapp.com/scores')
       .then((resp) => resp.json())
       .then((data) => {
         dispatch(setAllScores(data));
