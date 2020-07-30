@@ -1,8 +1,10 @@
 # Welcome to The Typing Game!
 
-![alt-text](/frontend/src/gif/typing.gif)
+![alt-text](/src/gif/typing.gif)
 
-This App was Built with Ruby on Rails, React and Redux langauges/libraries.
+This App was Built with React and Redux.
+
+The backend of the application can be found [here](https://github.com/biagioo/typing-game-api)
 
 Check out the live [applicatoin](https://the-typing-game.vercel.app/) or [read](https://dev.to/mindful_developer/react-redux-project-aaj) about it.
 
