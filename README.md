@@ -4,7 +4,7 @@
 
 This App was Built with Ruby on Rails, React and Redux langauges/libraries.
 
-Check out the demo [video](https://drive.google.com/file/d/1Rrt2VFNhYFobtLjD1-xlZIbDNAxaldDm/view?usp=sharing) or [read](https://dev.to/mindful_developer/react-redux-project-aaj) about it.
+Check out the live [applicatoin](https://the-typing-game.vercel.app/) or [read](https://dev.to/mindful_developer/react-redux-project-aaj) about it.
 
 ## Functionality
 
