@@ -5,23 +5,28 @@ import GameDifficulties from '../components/game/GameDifficulties';
 
 class GameContainer extends Component {
   state = {
-    loading: true,
+    loaded: false,
   };
   componentDidMount() {
-    this.props.fetchDifficulties().then(this.setState({loading: false}));
+    this.props.fetchDifficulties().then(() => this.setState({loaded: true}));
   }
 
   render() {
-    return (
-      <div>
-        <h1>The Typing Game</h1>
-        {this.state.loading ? (
-          <h1>Loading...</h1>
-        ) : (
+    if (this.state.loaded !== true) {
+      return (
+        <>
+          <h1>The Typing Game</h1>
+          <h2>Game loading...</h2>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <h1>The Typing Game</h1>
           <GameDifficulties difficulties={this.props.difficulties} />
-        )}
-      </div>
-    );
+        </>
+      );
+    }
   }
 }
 const mapStateToProps = (state) => {

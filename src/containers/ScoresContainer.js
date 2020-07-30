@@ -7,11 +7,11 @@ class ScoresContainer extends Component {
   state = {
     userInput: '',
     selectedDifficulty: '',
-    loading: true,
+    loaded: false,
   };
 
   componentDidMount() {
-    this.props.fetchAllScores().then(this.setState({loading: false}));
+    this.props.fetchAllScores().then(this.setState({loaded: true}));
   }
 
   handleChange = (event) => {
@@ -37,11 +37,8 @@ class ScoresContainer extends Component {
     return (
       <div>
         <h3>Scores</h3>
-        {this.state.loading ? (
-          <h1>loading...</h1>
-        ) : (
+        {this.state.loaded ? (
           <>
-            {' '}
             <label>Seach a display name:</label>
             <input type="text" onChange={this.handleInputChange} />
             <form onSubmit={this.handleOnSubmit}>
@@ -59,8 +56,10 @@ class ScoresContainer extends Component {
               {this.filterScores().map((score) => (
                 <ScoreCard key={score.id} score={score} />
               ))}
-            </div>{' '}
+            </div>
           </>
+        ) : (
+          <h1>Loading Scores...</h1>
         )}
       </div>
     );
