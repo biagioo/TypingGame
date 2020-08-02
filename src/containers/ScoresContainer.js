@@ -34,35 +34,39 @@ class ScoresContainer extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <h3>Scores</h3>
-        {this.state.loaded ? (
-          <>
-            <label>Seach a display name:</label>
-            <input type="text" onChange={this.handleInputChange} />
-            <form onSubmit={this.handleOnSubmit}>
-              <label>
-                Select an option to change which scores are shown:
-                <select onChange={this.handleChange}>
-                  <option value="">All Scores</option>
-                  <option value="Easy">Easy</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Hard">Hard</option>
-                </select>
-              </label>
-            </form>
-            <div>
-              {this.filterScores().map((score) => (
-                <ScoreCard key={score.id} score={score} />
-              ))}
-            </div>
-          </>
-        ) : (
+    if (this.state.loaded !== true) {
+      return (
+        <>
+          <h3>Scores</h3>
           <h1>Loading Scores...</h1>
-        )}
-      </div>
-    );
+        </>
+      );
+    } else {
+      return (
+        <>
+          <h3>Scores</h3>
+          <label>Seach a display name:</label>
+          <input type="text" onChange={this.handleInputChange} />
+          <form onSubmit={this.handleOnSubmit}>
+            <label>
+              Select an option to change which scores are shown:
+              <select onChange={this.handleChange}>
+                <option value="">All Scores</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </label>
+          </form>
+          <div>
+            {this.filterScores().map((score) => (
+              <ScoreCard key={score.id} score={score} />
+            ))}
+          </div>
+          )
+        </>
+      );
+    }
   }
 }
 
