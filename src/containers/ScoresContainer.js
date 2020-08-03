@@ -63,7 +63,6 @@ class ScoresContainer extends Component {
               <ScoreCard key={score.id} score={score} />
             ))}
           </div>
-          )
         </>
       );
     }
