@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchAllScores} from '../actions/scoreActions';
 import ScoreCard from '../components/scores/ScoreCard';
+import {LoopCircleLoading} from 'react-loadingg';
 
 class ScoresContainer extends Component {
   state = {
@@ -38,7 +39,7 @@ class ScoresContainer extends Component {
       return (
         <>
           <h3>Scores</h3>
-          <h1>Loading Scores...</h1>
+          <h1>Loading Scores {<LoopCircleLoading size="large" />}</h1>
         </>
       );
     } else {

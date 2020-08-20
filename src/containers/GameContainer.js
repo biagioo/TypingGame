@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchDifficulties} from '../actions/gameActions';
 import GameDifficulties from '../components/game/GameDifficulties';
+import {LoopCircleLoading} from 'react-loadingg';
 
 class GameContainer extends Component {
   state = {
@@ -16,7 +17,8 @@ class GameContainer extends Component {
       return (
         <>
           <h1>The Typing Game</h1>
-          <h2>Game loading...</h2>
+          <h2>Game loading</h2>
+          <LoopCircleLoading size="large" />
         </>
       );
     } else {
