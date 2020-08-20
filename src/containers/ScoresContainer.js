@@ -11,7 +11,7 @@ class ScoresContainer extends Component {
   };
 
   componentDidMount() {
-    this.props.fetchAllScores().then(this.setState({loaded: true}));
+    this.props.fetchAllScores().then(() => this.setState({loaded: true}));
   }
 
   handleChange = (event) => {
