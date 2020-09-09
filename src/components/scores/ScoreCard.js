@@ -14,6 +14,13 @@ const scoreStyle = {
   fontFamily: 'Arial',
 };
 
+const difficultyStyle = {
+  color: 'cornsilk',
+  backgroundColor: 'darkcyan',
+  padding: '10px',
+  fontFamily: 'Arial',
+};
+
 class ScoreCard extends Component {
   render() {
     const {score} = this.props;
@@ -21,7 +28,7 @@ class ScoreCard extends Component {
       <div key={score.id}>
         <h3 style={displayNameStyle}>Display Name: {score.display_name}</h3>
         <p style={scoreStyle}>Score: {score.number}</p>
-        <p>Difficulty: {score.difficulty_level}</p>
+        <p style={difficultyStyle}>Difficulty: {score.difficulty_level}</p>
       </div>
     );
   }
