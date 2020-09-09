@@ -21,7 +21,7 @@ class ScoreCard extends Component {
       <div key={score.id}>
         <h3 style={displayNameStyle}>Display Name: {score.display_name}</h3>
         <p style={scoreStyle}>Score: {score.number}</p>
-        <p>{score.difficulty_level}</p>
+        <p>Difficulty: {score.difficulty_level}</p>
       </div>
     );
   }
