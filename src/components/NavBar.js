@@ -13,7 +13,7 @@ const link = {
 
 const NavBar = () => {
   return (
-    <Spring from={{marginTop: -500}} to={{marginTop: 0}}>
+    <Spring from={{marginTop: -500}} to={{marginTop: 0}} config={{delay: 1000}}>
       {(props) => (
         <div style={props}>
           <div
