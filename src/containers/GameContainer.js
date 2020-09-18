@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchDifficulties} from '../actions/gameActions';
 import GameDifficulties from '../components/game/GameDifficulties';
 import {LoopCircleLoading} from 'react-loadingg';
+import {Spring} from 'react-spring/renderprops';
 
 class GameContainer extends Component {
   state = {
@@ -15,18 +16,26 @@ class GameContainer extends Component {
   render() {
     if (this.state.loaded !== true) {
       return (
-        <>
-          <h1>The Typing Game</h1>
-          <h2>Game loading</h2>
-          <LoopCircleLoading size="large" />
-        </>
+        <Spring from={{opacity: -5}} to={{opacity: 1}}>
+          {(props) => (
+            <div style={props}>
+              <h1>The Typing Game</h1>
+              <h2>Game loading</h2>
+              <LoopCircleLoading size="large" />
+            </div>
+          )}
+        </Spring>
       );
     } else {
       return (
-        <>
-          <h1>The Typing Game</h1>
-          <GameDifficulties difficulties={this.props.difficulties} />
-        </>
+        <Spring from={{opacity: -5}} to={{opacity: 1}}>
+          {(props) => (
+            <div style={props}>
+              <h1>The Typing Game</h1>
+              <GameDifficulties difficulties={this.props.difficulties} />
+            </div>
+          )}
+        </Spring>
       );
     }
   }
