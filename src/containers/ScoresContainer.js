@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchAllScores} from '../actions/scoreActions';
 import ScoreCard from '../components/scores/ScoreCard';
 import {LoopCircleLoading} from 'react-loadingg';
+import {Spring} from 'react-spring/renderprops';
 
 class ScoresContainer extends Component {
   state = {
@@ -37,34 +38,42 @@ class ScoresContainer extends Component {
   render() {
     if (this.state.loaded !== true) {
       return (
-        <>
-          <h3>Scores</h3>
-          <h1>Loading Scores {<LoopCircleLoading size="large" />}</h1>
-        </>
+        <Spring from={{opacity: -5}} to={{opacity: 1}}>
+          {(props) => (
+            <div style={props}>
+              <h3>Scores</h3>
+              <h1>Loading Scores {<LoopCircleLoading size="large" />}</h1>
+            </div>
+          )}
+        </Spring>
       );
     } else {
       return (
-        <>
-          <h3>Scores</h3>
-          <label>Seach a display name:</label>
-          <input type="text" onChange={this.handleInputChange} />
-          <form onSubmit={this.handleOnSubmit}>
-            <label>
-              Select an option to change which scores are shown:
-              <select onChange={this.handleChange}>
-                <option value="">All Scores</option>
-                <option value="Easy">Easy</option>
-                <option value="Medium">Medium</option>
-                <option value="Hard">Hard</option>
-              </select>
-            </label>
-          </form>
-          <div>
-            {this.filterScores().map((score) => (
-              <ScoreCard key={score.id} score={score} />
-            ))}
-          </div>
-        </>
+        <Spring from={{opacity: -5}} to={{opacity: 1}}>
+          {(props) => (
+            <div style={props}>
+              <h3>Scores</h3>
+              <label>Seach a display name:</label>
+              <input type="text" onChange={this.handleInputChange} />
+              <form onSubmit={this.handleOnSubmit}>
+                <label>
+                  Select an option to change which scores are shown:
+                  <select onChange={this.handleChange}>
+                    <option value="">All Scores</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                  </select>
+                </label>
+              </form>
+              <div>
+                {this.filterScores().map((score) => (
+                  <ScoreCard key={score.id} score={score} />
+                ))}
+              </div>
+            </div>
+          )}
+        </Spring>
       );
     }
   }
