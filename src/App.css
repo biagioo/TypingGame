@@ -1,9 +1,30 @@
 .App {
   text-align: center;
 }
-
+#root {
+  background: #5b5b5b;
+  background: -moz-linear-gradient(top, #5b5b5b 0%, #709acb 50%, #207dbc 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #5b5b5b 0%,
+    #709acb 50%,
+    #207dbc 100%
+  );
+  background: linear-gradient(to bottom, #5b5b5b 0%, #709acb 50%, #207dbc 100%);
+  min-height: 1000px;
+  text-align: center;
+}
 body {
   background-color: #282c34;
+  /* background: #5b5b5b;
+  background: -moz-linear-gradient(top, #5b5b5b 0%, #709acb 50%, #207dbc 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #5b5b5b 0%,
+    #709acb 50%,
+    #207dbc 100%
+  );
+  background: linear-gradient(to bottom, #5b5b5b 0%, #709acb 50%, #207dbc 100%); */
   color: white;
   padding: 40px;
   font-family: Arial;
