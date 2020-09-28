@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PostScore from '../scores/PostScore';
 import HighestScore from './HighestScore';
+import {Spring} from 'react-spring/renderprops';
 
 class Game extends Component {
   state = {
@@ -102,20 +103,24 @@ class Game extends Component {
         color: 'black',
       };
       return (
-        <div>
-          <h3>Click Start Game and Start Typing!</h3>
-          <span style={gameWordStyle}>{this.state.currentWord}</span>
-          <p style={{color: 'red'}}>Timer: {this.state.timerTime}</p>
-          <input
-            disabled={this.state.inputDisable}
-            placeholder="..."
-            onChange={this.handleOnChange}
-            value={this.state.userInput}
-            type="text"
-          />
-          <p>Current Score {this.state.score}</p>
-          <button onClick={this.startGame}>Start Game</button>
-        </div>
+        <Spring from={{opacity: -5}} to={{opacity: 1}}>
+          {(props) => (
+            <div style={props}>
+              <h3>Click Start Game and Start Typing!</h3>
+              <span style={gameWordStyle}>{this.state.currentWord}</span>
+              <p style={{color: 'red'}}>Timer: {this.state.timerTime}</p>
+              <input
+                disabled={this.state.inputDisable}
+                placeholder="..."
+                onChange={this.handleOnChange}
+                value={this.state.userInput}
+                type="text"
+              />
+              <p>Current Score {this.state.score}</p>
+              <button onClick={this.startGame}>Start Game</button>
+            </div>
+          )}
+        </Spring>
       );
     } else if (this.state.highestScore === true) {
       return (
@@ -126,12 +131,16 @@ class Game extends Component {
       );
     } else {
       return (
-        <div>
-          <PostScore
-            difficulty_id={this.props.difficulty_id}
-            score={this.state.score}
-          />
-        </div>
+        <Spring from={{opacity: -5}} to={{opacity: 1}}>
+          {(props) => (
+            <div style={props}>
+              <PostScore
+                difficulty_id={this.props.difficulty_id}
+                score={this.state.score}
+              />
+            </div>
+          )}
+        </Spring>
       );
     }
   }
