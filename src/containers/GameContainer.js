@@ -32,7 +32,13 @@ class GameContainer extends Component {
           {(props) => (
             <div style={props}>
               <h1>The Typing Game</h1>
-              <GameDifficulties difficulties={this.props.difficulties} />
+              <Spring from={{opacity: -5}} to={{opacity: 1}}>
+                {(props) => (
+                  <div style={props}>
+                    <GameDifficulties difficulties={this.props.difficulties} />
+                  </div>
+                )}
+              </Spring>
             </div>
           )}
         </Spring>
