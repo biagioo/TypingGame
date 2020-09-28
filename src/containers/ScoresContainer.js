@@ -66,11 +66,15 @@ class ScoresContainer extends Component {
                   </select>
                 </label>
               </form>
-              <div>
-                {this.filterScores().map((score) => (
-                  <ScoreCard key={score.id} score={score} />
-                ))}
-              </div>
+              <Spring from={{opacity: -5}} to={{opacity: 1}}>
+                {(props) => (
+                  <div style={props}>
+                    {this.filterScores().map((score) => (
+                      <ScoreCard key={score.id} score={score} />
+                    ))}
+                  </div>
+                )}
+              </Spring>
             </div>
           )}
         </Spring>
