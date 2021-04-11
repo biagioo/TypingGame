@@ -1,11 +1,15 @@
 import React from 'react';
-import {Spring} from 'react-spring/renderprops';
+import { Spring } from 'react-spring/renderprops';
 import typingGif from '../gif/typing.gif';
+
+const gifStyle = {
+  border: '5px solid white',
+};
 
 const HomePage = () => {
   return (
-    <Spring from={{opacity: -5}} to={{opacity: 1}}>
-      {(props) => (
+    <Spring from={{ opacity: -5 }} to={{ opacity: 1 }}>
+      {props => (
         <div style={props}>
           <div>
             <h1>Welcome to The Typing Game!</h1>
@@ -22,11 +26,7 @@ const HomePage = () => {
               filter through difficulties with the drop down menu.
             </p>
             <p>Enjoy!</p>
-            <img
-              style={{border: '5px solid white'}}
-              src={typingGif}
-              alt="GIf Loading..."
-            />
+            <img style={gifStyle} src={typingGif} alt='Gif Loading...' />
           </div>
         </div>
       )}
